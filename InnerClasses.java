@@ -1,9 +1,8 @@
 public class InnerClasses {
   public static void main(String agrs[]) {
-    Outer o = new Outer();
-    o.outerDisplay();
 
-    Outer.Inner i = new Outer().new Inner();
+    Outer4.Inner i = new Outer4.Inner();
+    i.innerDisplay();
   }
 }
 
@@ -60,5 +59,18 @@ class Outer3 {
     };
 
     m.display();
+  }
+}
+
+// Static inner classes
+class Outer4 {
+  static int x = 10;
+  int y = 20;
+
+  static class Inner {
+
+    void innerDisplay() {
+      System.out.println(x);
+    }
   }
 }
