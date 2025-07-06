@@ -26,7 +26,7 @@ class Outer {
   }
 }
 
-// local classes : only accessible inside the method
+// Local inner classes : only accessible inside the method
 class Outer2 {
   int x = 10;
 
@@ -41,5 +41,24 @@ class Outer2 {
 
     Inner i = new Inner();
     i.innerDisplay();
+  }
+}
+
+// Anonymous inner classes :
+abstract class My {
+  abstract void display();
+}
+
+class Outer3 {
+  int x = 10;
+
+  public void meth() {
+    My m = new My() { // Anonymous class
+      public void display() {
+        System.out.println("Hello");
+      };
+    };
+
+    m.display();
   }
 }
