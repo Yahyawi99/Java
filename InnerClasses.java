@@ -25,3 +25,21 @@ class Outer {
     System.out.println(i.y);
   }
 }
+
+// local classes : only accessible inside the method
+class Outer2 {
+  int x = 10;
+
+  void Display() {
+    class Inner {
+      int y = 20;
+
+      void innerDisplay() {
+        System.out.println("Hello inner");
+      }
+    }
+
+    Inner i = new Inner();
+    i.innerDisplay();
+  }
+}
